@@ -17,9 +17,12 @@ class UserRegisterView(View):
 		
 
 	def post(self, request, *args, **kwargs):
-		if request.session['logged_in']:
-			return render(request, 'dashboard/index.html')
-			
+		try:
+			if request.session['logged_in']:
+				return render(request, 'dashboard/index.html')
+		except KeyError:
+			pass	
+						
 		r = request.POST
 		username = r.get('username')
 		password = r.get('password')

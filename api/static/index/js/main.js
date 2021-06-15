@@ -15,17 +15,19 @@ var x = setInterval(function() {
   
 
   if (distance < 0) {
-    document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon end in :</h2> ';
     var [days, hours, minutes,seconds] = getdistance(distance2);
-    document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "+ minutes + "m " + seconds + "s " + '</h1>';
+    document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon end in :</h2> <br>'
+    document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s " + '</h1>';
   }else if (distance2 < 0){
   	clearInterval(x)
- 	  document.getElementById("timer-container").innerHTML = "The Hackathon ended";
+ 	document.getElementById("timer-container").innerHTML = "The Hackathon ended";
   }
   else{
-  	document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon start in :</h1> ';
   	var [days, hours, minutes, seconds] = getdistance(distance);
-  	document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "+ minutes + "m " + seconds + "s " + '</h1>';
+  	document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon start in :</h1> <br>'
+  	document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s " + '</h1>';
   }
   // Display the result in the element with id="demo"
   
@@ -34,8 +36,8 @@ var x = setInterval(function() {
 }, 1000);
 
 function getdistance(distance){
-	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   	return [days,hours,minutes,seconds];
