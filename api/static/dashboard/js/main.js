@@ -15,7 +15,7 @@ var x = setInterval(function() {
   
 
   if (distance < 0) {
-    document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon end in :</h2> ';
+    document.getElementById("timer-container").innerHTML = '<h2 class="timer-title"> Hackathon end in :</h2> ';
     var [days, hours, minutes,seconds] = getdistance(distance2);
     document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "+ minutes + "m " + seconds + "s " + '</h1>';
   }else if (distance2 < 0){
@@ -23,7 +23,7 @@ var x = setInterval(function() {
  	  document.getElementById("timer-container").innerHTML = "The Hackathon ended";
   }
   else{
-  	document.getElementById("timer-container").innerHTML = '<h1 class="timer-title"> Hackathon start in :</h1> ';
+  	document.getElementById("timer-container").innerHTML = '<h2 class="timer-title"> Hackathon start in :</h2> ';
   	var [days, hours, minutes, seconds] = getdistance(distance);
   	document.getElementById("timer-container").innerHTML += '<h1 class="timer">' + days + "d " + hours + "h "+ minutes + "m " + seconds + "s " + '</h1>';
   }

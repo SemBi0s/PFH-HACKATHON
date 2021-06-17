@@ -139,10 +139,12 @@
 }
 
 @media screen and (min-width: 1920px) {
-  .heading {
-    margin-bottom: -93px;
-  }
-
+  
+   .heading-2 {
+     
+     margin-top: 0;
+     
+   }
 
   .button {
     width: 15vw;

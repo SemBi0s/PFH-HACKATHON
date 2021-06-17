@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import include
 from api.views.users import UserRegisterView, UserLoginView, UserLogoutView
 from api.views.home import HomeView, DashboardView
+from api.views.teams import TeamAddView, TeamRemoveView
 
 
 urlpatterns = [
@@ -26,5 +27,7 @@ urlpatterns = [
     path('login', UserLoginView.as_view(), name="Login"),
     path('', HomeView.as_view(), name='index'),
     path('dashboard', DashboardView.as_view(), name='dashboard'),
-    path('logout', UserLogoutView.as_view(), name='logout')
+    path('logout', UserLogoutView.as_view(), name='logout'),
+    path('addteam',TeamAddView.as_view(),name='addteam'),
+    path('delteam', TeamRemoveView.as_view(), name='delteam')
 ]
